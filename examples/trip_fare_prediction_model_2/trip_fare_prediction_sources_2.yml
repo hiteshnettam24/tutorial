@@ -1,0 +1,104 @@
+version: 2
+
+sources:
+  - name: rest
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+    tables:
+      - name: trip_fare_request_2
+        description: "json request for fare prediction"
+        columns:
+          - name: pickup_datetime
+            data_type: timestamp
+            meta:
+               jname: pickup_datetime
+          - name: hour_of_day
+            data_type: int
+            meta:
+               jname: hour_of_day
+          - name: calendar_day
+            data_type: string
+            meta:
+               jname: calendar_day
+          - name: pickup_longitude
+            data_type: double
+            meta:
+               jname: pickup_longitude
+          - name: pickup_latitude
+            data_type: double
+            meta:
+               jname: pickup_latitude
+          - name: dropoff_longitude
+            data_type: double
+            meta:
+               jname: dropoff_longitude
+          - name: dropoff_latitude
+            data_type: double
+            meta:
+               jname: dropoff_latitude
+          - name: pickup_zipcode
+            data_type: string
+            meta:
+               jname: pickup_zipcode
+          - name: dropoff_zipcode
+            data_type: string
+            meta:
+               jname: dropoff_zipcode
+          - name: passenger_count
+            data_type: double
+            meta:
+               jname: passenger_count
+        meta:
+          source_type: rest
+          source_format: json
+          route_base: predict_fare
+
+      - name: trip_fare_response_2
+        description: "json response for fare prediction"
+        columns:
+          - name: hourly_segment
+            data_type: string
+            meta:
+               jname: hourly_segment
+          - name: is_holiday_or_weekend
+            data_type: int
+            meta:
+               jname: is_holiday_or_weekend
+          - name: pickup_geo_area
+            data_type: string
+            meta:
+               jname: pickup_geo_area
+          - name: dropoff_geo_area
+            data_type: string
+            meta:
+               jname: dropoff_geo_area
+          - name: fare_amount
+            data_type: double
+            meta:
+               jname: fare_amount
+        meta:
+          source_type: prediction_service
+          source_format: json
+
+  - name: elevo
+    schema: trip_fare
+    tables:
+      - name: fare_prediction_log2
+        columns:
+          - name: pickup_datetime
+            data_type: timestamp
+          - name: hourly_segment
+            data_type: string
+          - name: is_holiday_or_weekend
+            data_type: int
+          - name: pickup_geo_area
+            data_type: string
+          - name: dropoff_geo_area
+            data_type: string
+          - name: fare_amount
+            data_type: double
+        meta:
+          source_type: elevo
+          source_format: elevo
