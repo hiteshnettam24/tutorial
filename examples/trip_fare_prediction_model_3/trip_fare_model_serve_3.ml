@@ -22,7 +22,7 @@ using_elevo_options
                   "timestamp_column": "None"
                 },
                 { "name": "total_passenger_count_4hr",
-                  "timestamp_column": "None"
+                  "timestamp_column": "pickup_datetime"
                 }
             ]
         }],
