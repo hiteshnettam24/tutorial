@@ -1,5 +1,4 @@
-select pickup_datetime, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude,
-       pickup_zipcode, dropoff_zipcode, passenger_count
+select pickup_datetime, pickup_zipcode, dropoff_zipcode, passenger_count
 from {{ source("rest", "trip_fare_request_1") }}
 using_elevo_options
 (
