@@ -14,22 +14,6 @@ sources:
             data_type: timestamp
             meta:
                jname: pickup_datetime
-          - name: pickup_longitude
-            data_type: double
-            meta:
-               jname: pickup_longitude
-          - name: pickup_latitude
-            data_type: double
-            meta:
-               jname: pickup_latitude
-          - name: dropoff_longitude
-            data_type: double
-            meta:
-               jname: dropoff_longitude
-          - name: dropoff_latitude
-            data_type: double
-            meta:
-               jname: dropoff_latitude
           - name: pickup_zipcode
             data_type: string
             meta:
