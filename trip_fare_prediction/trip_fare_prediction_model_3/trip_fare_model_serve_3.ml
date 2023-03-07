@@ -1,6 +1,6 @@
 select pickup_datetime, hour_of_day, calendar_day,
        pickup_zipcode, dropoff_zipcode, passenger_count
-from {{ source("rest", "trip_fare_request_2") }}
+from {{ source("rest", "trip_fare_request_3") }}
 using_elevo_options
 (
     {
