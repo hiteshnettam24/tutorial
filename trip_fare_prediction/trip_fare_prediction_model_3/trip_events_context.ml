@@ -3,7 +3,6 @@ using_elevo_options
 (
     {
         "query_type": "featureset",
-        "featureset_name": "trip_events_context",
         "entities": ["pickup_zipcode","dropoff_zipcode","pickup_longitude",
                      "pickup_latitude","dropoff_longitude","dropoff_latitude"],
         "min_aggregation_interval": "1h",

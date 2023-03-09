@@ -3,7 +3,6 @@ using_elevo_options
 (
     {
         "query_type": "featureview",
-        "feature_view": "trip_feature_view_2",
         "serve_mode": "{{ var("serve_mode", "online") }}",
         "features": [
         {
