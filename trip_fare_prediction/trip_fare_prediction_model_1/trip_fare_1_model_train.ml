@@ -1,10 +1,10 @@
-select * from trip_fare_train_dataset_1
+select * from trip_fare_1_train_dataset
 using_elevo_options
 (
 	{
         "query_type": "training",
         "description": "{{ var("description", "trip fare model training") }}",
-        "model": { "name": "trip_fare_model_1", "retrain_run_id": {{ var("retrain_run_id", 0) }}},
+        "model": { "name": "trip_fare_1_model", "retrain_run_id": {{ var("retrain_run_id", 0) }}},
         "ludwig_config": {
             "input_features": [
                      { "name": "pickup_zipcode", "type": "category" },

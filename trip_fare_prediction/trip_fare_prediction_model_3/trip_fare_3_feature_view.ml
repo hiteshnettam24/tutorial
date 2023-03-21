@@ -1,4 +1,4 @@
-select * from trip_feature_view_2
+select * from trip_fare_3_feature_view
 using_elevo_options
 (
     {
@@ -26,6 +26,13 @@ using_elevo_options
             "featureset_name": "geo_area_context",
             "source_features": ["geo_area"],
             "entity_key_map": {"dropoff_zipcode": "zipcode"}
+        },
+        {
+            "feature_name": "total_passenger_count_4hr",
+            "featureset_name": "trip_events_context",
+            "source_features": ["sum_passenger_count"],
+            "window_start_time": "-4h",
+            "window_end_time": "0d"
         }]
     }
 )
