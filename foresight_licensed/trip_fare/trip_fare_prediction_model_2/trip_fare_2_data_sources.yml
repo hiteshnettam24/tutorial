@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: mysql
+    database: mysqldb
+    schema: mysqlsch
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    tables:
+      - name: holiday_weekend_context
+        description: "holiday_weekend_context"
+        meta:
+          source_type: mysql
+          source_format: jdbc
+          url: jdbc:mysql://<mysql host>:3306/tutorial_client_<xxxx_xxxxxx>
+          user: <mysql user>
+          password: <mysql password>
+          driver: com.mysql.jdbc.Driver
+          batch_schedule: -1d
+
+      - name: hour_of_day_context
+        description: "hourly segment context"
+        meta:
+          source_type: mysql
+          source_format: jdbc
+          url: jdbc:mysql://<mysql host>:3306/tutorial_client_<xxxx_xxxxxx>
+          user: <mysql user>
+          password: <mysql password>
+          driver: com.mysql.jdbc.Driver
+          batch_schedule: -1d
+
+      - name: geo_area_context
+        description: "geo area context"
+        meta:
+          source_type: mysql
+          source_format: jdbc
+          url: jdbc:mysql://<mysql host>:3306/tutorial_client_<xxxx_xxxxxx>
+          user: <mysql user>
+          password: <mysql password>
+          driver: com.mysql.jdbc.Driver
+          batch_schedule: -1d

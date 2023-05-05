@@ -1,11 +1,11 @@
-select * from trip_fare_2_train_dataset
+select * from trip_fare_3_train_dataset
 using_elevo_options
 (
 	{
         "query_type": "training",
         "description": "{{ var("description", "trip fare model training") }}",
-        "model": { "name": "trip_fare_2_model", "retrain_run_id": {{ var("retrain_run_id", 0) }}},
-        "ludwig_config": {
+        "model": { "name": "trip_fare_3_dl_model", "retrain_run_id": {{ var("retrain_run_id", 0) }}},
+        "dl_config": {
             "input_features": [
                      { "name": "pickup_zipcode", "type": "category" },
                      { "name": "dropoff_zipcode", "type": "category" },
@@ -14,7 +14,9 @@ using_elevo_options
                      { "name": "hourly_segment", "type": "category" },
                      { "name": "is_holiday_or_weekend", "type": "numerical" },
                      { "name": "pickup_geo_area", "type": "category" },
-                     { "name": "dropoff_geo_area", "type": "category" }
+                     { "name": "dropoff_geo_area", "type": "category" },
+                     { "name": "total_passenger_count_4hr", "type": "numerical",
+                       "preprocessing": {"normalization":"zscore", "missing_value_strategy":"fill_with_const","fill_value":0} }
             ],
             "output_features": [
               { "name": "fare_amount", "type": "numerical",

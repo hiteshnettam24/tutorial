@@ -4,8 +4,8 @@ using_elevo_options
 	{
         "query_type": "training",
         "description": "{{ var("description", "trip fare model training") }}",
-        "model": { "name": "trip_fare_1_model", "retrain_run_id": {{ var("retrain_run_id", 0) }}},
-        "ludwig_config": {
+        "model": { "name": "trip_fare_1_dl_model", "retrain_run_id": {{ var("retrain_run_id", 0) }}},
+        "dl_config": {
             "input_features": [
                      { "name": "pickup_zipcode", "type": "category" },
                      { "name": "dropoff_zipcode", "type": "category" },
