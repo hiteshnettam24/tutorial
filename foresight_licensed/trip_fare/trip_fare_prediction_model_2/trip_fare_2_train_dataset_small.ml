@@ -14,4 +14,5 @@ from
                Date(from_utc_timestamp(pickup_datetime, "EST")) as calendar_day,
                pickup_zipcode, dropoff_zipcode, passenger_count, fare_amount
         from {{ source('mysql','trip_table') }} limit 2000
+    )
 ) t
