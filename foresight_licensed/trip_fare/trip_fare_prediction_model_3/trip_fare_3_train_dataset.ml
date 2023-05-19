@@ -13,6 +13,6 @@ from
                cast(hour(from_utc_timestamp(pickup_datetime, "EST")) as bigint) as hour_of_day,
                Date(from_utc_timestamp(pickup_datetime, "EST")) as calendar_day,
                pickup_zipcode, dropoff_zipcode, passenger_count, fare_amount
-        from {{ source('mysql','trip_table') }}
+        from {{ source('aws','trip_table') }}
     )
 ) t

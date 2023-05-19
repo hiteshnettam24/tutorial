@@ -18,7 +18,7 @@ using_elevo_options
             }]
         }],
         "timestamp_column": "pickup_datetime",
-        "backfill_source":["{{ source("mysql", "trip_table") }}"],
+        "backfill_source":["{{ source("aws", "trip_table") }}"],
         "backfill_start_datetime": "2022-10-15 00:00:00.000"
     }
 )

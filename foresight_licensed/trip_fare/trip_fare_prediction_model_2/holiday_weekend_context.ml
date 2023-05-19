@@ -1,4 +1,4 @@
-select * from {{ source("mysql", "holiday_weekend_context") }}
+select * from {{ source("aws", "holiday_weekend_context") }}
 using_elevo_options
 (
     {

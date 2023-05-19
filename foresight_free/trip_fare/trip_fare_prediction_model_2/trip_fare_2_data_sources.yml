@@ -1,44 +1,42 @@
 version: 2
-
 sources:
-  - name: mysql
-    database: mysqldb
-    schema: mysqlsch
-    quoting:
-      database: false
-      schema: false
-      identifier: false
+- name: aws
+  tables:
+  - name: hour_of_day_context
+    description: Ride information for each trip
+    meta:
+      source_type: aws
+      source_format: csv
+      path: s3a://foresight-tutorial/trip_fare/hour_of_day_context.csv
+      anon: true
+      infer_schema: true
+      header: true
+      delimiter: ','
+      batch_schedule: -1d
+      s3_endpoint_url: https://s3.us-west-2.amazonaws.com
 
-    tables:
-      - name: holiday_weekend_context
-        description: "holiday_weekend_context"
-        meta:
-          source_type: mysql
-          source_format: jdbc
-          url: jdbc:mysql://<mysql host>:3306/tutorial_client_<xxxx_xxxxxx>
-          user: <mysql user>
-          password: <mysql password>
-          driver: com.mysql.jdbc.Driver
-          batch_schedule: -1d
+  - name: holiday_weekend_context
+    description: Ride information for each trip
+    meta:
+      source_type: aws
+      source_format: csv
+      path: s3a://foresight-tutorial/trip_fare/holiday_weekend_context.csv
+      anon: true
+      infer_schema: true
+      header: true
+      delimiter: ','
+      batch_schedule: -1d
+      s3_endpoint_url: https://s3.us-west-2.amazonaws.com
 
-      - name: hour_of_day_context
-        description: "hourly segment context"
-        meta:
-          source_type: mysql
-          source_format: jdbc
-          url: jdbc:mysql://<mysql host>:3306/tutorial_client_<xxxx_xxxxxx>
-          user: <mysql user>
-          password: <mysql password>
-          driver: com.mysql.jdbc.Driver
-          batch_schedule: -1d
-
-      - name: geo_area_context
-        description: "geo area context"
-        meta:
-          source_type: mysql
-          source_format: jdbc
-          url: jdbc:mysql://<mysql host>:3306/tutorial_client_<xxxx_xxxxxx>
-          user: <mysql user>
-          password: <mysql password>
-          driver: com.mysql.jdbc.Driver
-          batch_schedule: -1d
+  - name: geo_area_context
+    description: Ride information for each trip
+    meta:
+      source_type: aws
+      source_format: csv
+      path: s3a://foresight-tutorial/trip_fare/geo_area_context.csv
+      anon: true
+      infer_schema: true
+      header: true
+      delimiter: ','
+      batch_schedule: -1d
+      s3_endpoint_url: https://s3.us-west-2.amazonaws.com

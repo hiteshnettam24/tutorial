@@ -1,4 +1,4 @@
-select * from {{ source("mysql", "hour_of_day_context") }}
+select * from {{ source("aws", "hour_of_day_context") }}
 using_elevo_options
 (
     {

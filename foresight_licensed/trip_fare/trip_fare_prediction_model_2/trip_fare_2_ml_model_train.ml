@@ -1,4 +1,4 @@
-select * from trip_fare_2_train_dataset_small
+select * from trip_fare_2_train_dataset
 using_elevo_options
 (
 	{
