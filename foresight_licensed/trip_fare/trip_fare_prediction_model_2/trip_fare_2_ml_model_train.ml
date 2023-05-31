@@ -1,4 +1,4 @@
-select * from trip_fare_2_train_dataset
+select * from trip_fare_2_train_dataset limit {{ var('row_limit', 'all') }}
 using_elevo_options
 (
 	{
