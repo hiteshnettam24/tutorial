@@ -1,5 +1,5 @@
 select * from {{ source("aws", "holiday_weekend_context") }}
-using_elevo_options
+using_foresight_options
 (
     {
         "query_type": "featureset",

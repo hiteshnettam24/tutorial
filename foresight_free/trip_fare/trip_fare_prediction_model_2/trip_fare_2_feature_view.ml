@@ -1,5 +1,5 @@
 select * from trip_fare_2_feature_view
-using_elevo_options
+using_foresight_options
 (
     {
         "query_type": "featureview",
