@@ -1,5 +1,5 @@
 select * from {{ source("aws", "geo_area_context") }}
-using_elevo_options
+using_foresight_options
 (
     {
         "query_type": "featureset",

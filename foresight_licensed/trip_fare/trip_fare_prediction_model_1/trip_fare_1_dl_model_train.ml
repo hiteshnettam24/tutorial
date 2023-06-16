@@ -1,5 +1,5 @@
 select * from trip_fare_1_train_dataset limit {{ var('row_limit', 'all') }}
-using_elevo_options
+using_foresight_options
 (
 	{
         "query_type": "training",
