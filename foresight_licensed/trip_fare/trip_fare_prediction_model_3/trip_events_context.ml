@@ -1,4 +1,4 @@
-select * from {{ source("kafka", "trip_events") }}
+select * from {{ source("aws", "trip_table") }}
 using_foresight_options
 (
     {
@@ -7,7 +7,6 @@ using_foresight_options
                      "pickup_latitude","dropoff_longitude","dropoff_latitude"],
         "min_aggregation_interval": "1h",
         "timestamp_column": "pickup_datetime",
-        "backfill_source":["{{ source("aws", "trip_table") }}"],
         "backfill_start_datetime": "2022-10-15 00:00:00.000"
     }
 )
