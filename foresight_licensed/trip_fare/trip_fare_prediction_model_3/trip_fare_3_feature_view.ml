@@ -29,7 +29,7 @@ using_foresight_options
         },
         {
             "feature_name": "total_passenger_count_4hr",
-            "featureset_name": "trip_events_context",
+            "featureset_name": "trip_events_aggr1",
             "source_features": ["sum_passenger_count"],
             "window_start_time": "-4h",
             "window_end_time": "0d"
