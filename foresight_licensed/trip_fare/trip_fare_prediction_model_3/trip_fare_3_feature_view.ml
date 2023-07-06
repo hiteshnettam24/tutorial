@@ -6,6 +6,14 @@ using_foresight_options
         "serve_mode": "{{ var("serve_mode", "online") }}",
         "features": [
         {
+            "feature_name": "hour_of_day",
+            "expr": "pickup_datetime.getHours()"
+        },
+        {
+            "feature_name": "calendar_day",
+            "expr": "pickup_datetime.getCalendarDay()"
+        },
+        {
             "feature_name": "is_holiday_or_weekend",
             "featureset_name": "holiday_weekend_context",
             "source_features": ["is_holiday_or_weekend"]
@@ -29,7 +37,7 @@ using_foresight_options
         },
         {
             "feature_name": "total_passenger_count_4hr",
-            "featureset_name": "trip_events_context",
+            "featureset_name": "trip_events_aggr1",
             "source_features": ["sum_passenger_count"],
             "window_start_time": "-4h",
             "window_end_time": "0d"
