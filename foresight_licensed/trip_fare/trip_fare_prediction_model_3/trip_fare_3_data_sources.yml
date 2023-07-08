@@ -16,5 +16,5 @@ sources:
           topic: tutorial_client_<xxxx_xxxxxx>_trip_table11
           offset: latest
           streaming_window: 2 seconds
-          preprocessor: com.preprocessors.DefaultJsonPreprocessor
+          preprocessor: com.aizen.preprocessors.DefaultJsonPreprocessor
 
