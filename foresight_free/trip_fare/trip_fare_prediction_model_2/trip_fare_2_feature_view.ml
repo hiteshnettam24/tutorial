@@ -3,7 +3,6 @@ using_foresight_options
 (
     {
         "query_type": "featureview",
-        "serve_mode": "{{ var("serve_mode", "online") }}",
         "features": [
         {
             "feature_name": "is_holiday_or_weekend",
