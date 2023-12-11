@@ -1,10 +1,9 @@
-select * from trip_fare_1_train_dataset limit {{ var('row_limit', 'all') }}
+select * from trip_fare_1_train_dataset
 using_foresight_options
 (
 	{
         "query_type": "training",
-        "description": "{{ var("description", "trip fare model training") }}",
-        "model": { "name": "trip_fare_1_model", "retrain_run_id": {{ var("retrain_run_id", 0) }}},
+        "model": { "name": "trip_fare_1_model" },
         "ml_config": 
         {
          "setup":
